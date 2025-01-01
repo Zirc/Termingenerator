@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ICS-Generator">
+    <meta name="theme-color" content="#007bff">
+    <title>ICS-Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ICS-Generator</h1>
+        <form id="icsForm">
+            <label for="title">Titel:</label>
+            <input type="text" id="title" placeholder="z. B. Meeting" required>
+
+            <label for="start">Startzeit:</label>
+            <input type="datetime-local" id="start" required>
+
+            <label for="end">Endzeit:</label>
+            <input type="datetime-local" id="end" required>
+
+            <label for="description">Beschreibung:</label>
+            <textarea id="description" placeholder="Optionale Beschreibung"></textarea>
+
+            <label for="location">Ort:</label>
+            <input type="text" id="location" placeholder="z. B. Büro, Raum 101">
+
+            <label for="recurrence">Wiederholung:</label>
+            <select id="recurrence">
+                <option value="none">Keine</option>
+                <option value="daily">Täglich</option>
+                <option value="weekly">Wöchentlich</option>
+                <option value="monthly">Monatlich</option>
+            </select>
+
+            <button type="submit">ICS-Datei erstellen</button>
+        </form>
+        <a id="downloadLink" style="display:none;">ICS-Datei herunterladen</a>
+        <button id="shareButton" style="display:none;">ICS-Datei teilen</button>
+        <button id="newEventButton" style="display:none;">Neues Ereignis erstellen</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
