@@ -15,11 +15,17 @@
             <label for="title">Titel:</label>
             <input type="text" id="title" placeholder="z. B. Meeting" required>
 
-            <label for="start">Startzeit:</label>
-            <input type="datetime-local" id="start" required>
+            <label for="startDate">Startdatum:</label>
+            <input type="date" id="startDate" required>
 
-            <label for="end">Endzeit:</label>
-            <input type="datetime-local" id="end" required>
+            <label for="startTime">Startzeit:</label>
+            <input type="time" id="startTime">
+
+            <label for="endDate">Enddatum:</label>
+            <input type="date" id="endDate" required>
+
+            <label for="endTime">Endzeit:</label>
+            <input type="time" id="endTime">
 
             <label for="description">Beschreibung:</label>
             <textarea id="description" placeholder="Optionale Beschreibung"></textarea>
@@ -27,12 +33,24 @@
             <label for="location">Ort:</label>
             <input type="text" id="location" placeholder="z. B. Büro, Raum 101">
 
-            <label for="recurrence">Wiederholung:</label>
-            <select id="recurrence">
-                <option value="none">Keine</option>
-                <option value="daily">Täglich</option>
-                <option value="weekly">Wöchentlich</option>
-                <option value="monthly">Monatlich</option>
+            <label for="recurrenceCount">Wiederholungsanzahl:</label>
+            <input type="number" id="recurrenceCount" placeholder="z. B. 2" min="1">
+
+            <label for="recurrenceUnit">Wiederholungseinheit:</label>
+            <select id="recurrenceUnit">
+                <option value="DAILY">Tage</option>
+                <option value="WEEKLY">Wochen</option>
+                <option value="MONTHLY">Monate</option>
+                <option value="YEARLY">Jahre</option>
+            </select>
+
+            <label for="reminders">Erinnerungen:</label>
+            <select id="reminders" multiple>
+                <option value="-PT30M">30 Minuten vorher</option>
+                <option value="-PT2H">2 Stunden vorher</option>
+                <option value="-PT8H">8 Stunden vorher</option>
+                <option value="-P1D">1 Tag vorher</option>
+                <option value="-P2D">2 Tage vorher</option>
             </select>
 
             <button type="submit">ICS-Datei erstellen</button>
